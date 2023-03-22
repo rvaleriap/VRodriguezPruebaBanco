@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PL
 {
-    public class Program
+    public class Banco
     {
         public static void Add()
         {
@@ -23,20 +23,20 @@ namespace PL
             Console.WriteLine("Ingrese el NoClientes del banco");
             banco.NoClientes = int.Parse(Console.ReadLine());
 
-            ML.Pais pais = new ML.Pais();
+            banco.Pais = new ML.Pais();
             Console.WriteLine("Ingrese el IdPais del banco");
-            pais.IdPais = int.Parse(Console.ReadLine());
+            banco.Pais.IdPais = int.Parse(Console.ReadLine());
 
-            ML.RazonSocial razonSocial = new ML.RazonSocial();
+            banco.RazonSocial = new ML.RazonSocial();
             Console.WriteLine("Ingrese el IdRazonSocial del banco");
-            razonSocial.IdRazonSocial = int.Parse(Console.ReadLine());
+            banco.RazonSocial.IdRazonSocial = int.Parse(Console.ReadLine());
 
             ML.Result result = BL.Banco.Add(banco);
             Console.ReadKey();
         }
         static void Main(string[] args)
         {
-            PL.Program.Add();
+            PL.Banco.Add();
         }
     }
 }
